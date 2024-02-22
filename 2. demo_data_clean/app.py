@@ -21,7 +21,7 @@ class FormatUser(object):
         self.secret = secret
 
 users = {
-    2 : {'name' : 'Trevor', 'secret' : 'bugs'}
+    2 : {'name' : 'Trevor', 'secret' : 'I thought WiFi was powered by satellites until I was 20'}
 }
 
 # NEW: Define a request parser that looks for the specific required arguments
