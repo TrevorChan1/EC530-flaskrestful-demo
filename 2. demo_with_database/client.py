@@ -23,7 +23,7 @@ while (inp != '4'):
             secret = input("Enter A Super Secret Secret: ")
 
             try:
-                print(put(url+uid, data={"name" : name, "secret" : secret}))
+                print(put(url+uid, json={"name" : name, "secret" : secret}))
             except Exception as e:
                 print(f"ERROR: Failed to create user:", e)
         

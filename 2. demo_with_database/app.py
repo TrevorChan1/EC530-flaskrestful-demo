@@ -15,10 +15,10 @@ user_definition = {
 }
 
 class FormatUser(object):
-    def __init__(self, uid, name, my_secret):
+    def __init__(self, uid, name, secret):
         self.user_id = uid
         self.name = name
-        self.my_secret = my_secret
+        self.secret = secret
 
 users = {
     2 : {'name' : 'Trevor', 'secret' : 'bugs'}
@@ -51,13 +51,12 @@ class UserAPI(Resource):
         return get_user(user_id)
     
     # PUT / POST function, where you are able to access the request value and store it on the server-side
+    @marshal_with(user_definition)
     def put(self, user_id):
         
         # NEW: Adding in flask request parsing
         try:
-            print("here")
             args = parser.parse_args()
-            print(args)
 
             users[user_id] = {'name' : args['name'], 'secret' : args['secret']}
             return FormatUser(user_id, args['name'], args['secret'])
