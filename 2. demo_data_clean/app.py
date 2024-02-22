@@ -52,7 +52,7 @@ class UserAPI(Resource):
     
     # PUT / POST function, where you are able to access the request value and store it on the server-side
     @marshal_with(user_definition)
-    def put(self, user_id):
+    def post(self, user_id):
         
         # NEW: Adding in flask request parsing
         try:

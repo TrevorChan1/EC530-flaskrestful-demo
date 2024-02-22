@@ -25,7 +25,7 @@ class UserAPI(Resource):
             return {'error' : 'no such user found'}, 404
     
     # PUT / POST function, where you are able to access the request value and store it on the server-side
-    def put(self, user_id):
+    def post(self, user_id):
         users[user_id] = request.form['data']
         return {user_id : users[user_id]}
 

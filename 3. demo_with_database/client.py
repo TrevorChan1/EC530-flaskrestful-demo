@@ -1,9 +1,9 @@
-from requests import put, get, delete
+from requests import post, get, delete
 
 url = "http://localhost:5000/user/"
 
 # Just a while loop that takes user decisions
-inp = input("Enter number: \n\t1. GET \n\t2. PUT \n\t3. DELETE \n\t4. Quit\n")
+inp = input("Enter number: \n\t1. GET \n\t2. POST \n\t3. DELETE \n\t4. Quit\n")
 while (inp != '4'):
     match inp:
 
@@ -16,14 +16,14 @@ while (inp != '4'):
             except Exception as e:
                 print(f"ERROR: Failed to get user with ID {uid}:", e)
 
-        # PUT
+        # POST
         case '2':
             uid = input("Enter User ID: ")
             name = input("Enter User Name: ")
             secret = input("Enter A Super Secret Secret: ")
 
             try:
-                print(put(url+uid, json={"name" : name, "secret" : secret}))
+                print(post(url+uid, json={"name" : name, "secret" : secret}))
             except Exception as e:
                 print(f"ERROR: Failed to create user:", e)
         
@@ -42,6 +42,6 @@ while (inp != '4'):
         case _:
             print("Idk what u just put broski")
 
-    inp = input("Enter number: \n1. GET \n2. PUT \n3. DELETE \n4. Quit\n")
+    inp = input("Enter number: \n1. GET \n2. POST \n3. DELETE \n4. Quit\n")
     
 
