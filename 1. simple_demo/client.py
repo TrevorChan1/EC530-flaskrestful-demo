@@ -1,6 +1,6 @@
 from requests import post, get, delete
 
-url = "http://localhost:5000/user/"
+url = "http://localhost:8000/user/"
 
 # Just a while loop that takes user decisions
 inp = input("Enter number: \n\t1. GET \n\t2. POST \n\t3. DELETE \n\t4. Quit\n")
