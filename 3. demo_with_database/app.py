@@ -125,4 +125,4 @@ class UserAPI(Resource):
 api.add_resource(UserAPI, '/user/<int:user_id>')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=8000, debug=True)
